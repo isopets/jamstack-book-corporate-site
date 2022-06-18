@@ -17,10 +17,13 @@ const Blog = props => {
                 <h3> {singleBlog.node.title} </h3>
                 <p> {singleBlog.node.excerpt} </p>
                 <p> {singleBlog.node.date} </p>
-                <Link to={singleBlog.node.slug}> Read More </Link>
+                <Link to={singleBlog.node.fields.slug}> Read More </Link>
               </div>
               <GatsbyImage
-                image={singleBlog.node.image.childImageSharp.gatsbyImageData}
+                image={
+                  singleBlog.node.frontmatter.image.childImageSharp
+                    .gatsbyImageData
+                }
                 alt="card-image"
                 className={style.cardImg}
               />
@@ -36,7 +39,7 @@ export default Blog
 
 export const query = graphql`
   query ContentfulBlogQuery {
-    allContentfulBlog(sort: { fields: date, order: DESC }) {
+    allContentfulBlog {
       edges {
         node {
           title
