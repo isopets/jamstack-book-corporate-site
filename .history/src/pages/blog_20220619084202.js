@@ -18,11 +18,7 @@ const Blog = props => {
                 <p> {singleBlog.node.date} </p>
                 <Link to={singleBlog.node.slug}> Read More </Link>
               </div>
-              <GatsbyImage
-                image={singleBlog.node.image.gatsbyImageData}
-                alt="card-image"
-                className={style.cardImg}
-              />
+              <GatsbyImage image={singleBlog.node.image.gatsbyImageData} alt="card-image" className={style.cardImg} />
             </div>
           ))}
         </div>

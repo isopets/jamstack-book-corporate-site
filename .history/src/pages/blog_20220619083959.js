@@ -19,7 +19,7 @@ const Blog = props => {
                 <Link to={singleBlog.node.slug}> Read More </Link>
               </div>
               <GatsbyImage
-                image={singleBlog.node.image.gatsbyImageData}
+                image={singleBlog.node.image.childImageSharp.gatsbyImageData}
                 alt="card-image"
                 className={style.cardImg}
               />
