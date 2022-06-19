@@ -39,7 +39,6 @@ export const query = graphql`
   query ContentfulSingleBlogQuery($slug: String!) {
     contentfulBlog(slug: { eq: $slug }) {
       title
-      excerpt
       date(formatString: "YYYY-MM-DD")
       textBody {
         childMarkdownRemark {

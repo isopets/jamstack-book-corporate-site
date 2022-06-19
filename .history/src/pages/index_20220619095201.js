@@ -12,10 +12,6 @@ import Seo from "../components/seo"
 const Index = props => {
   return (
     <Layout>
-      <Seo
-        title="Jack of All Trades"
-        description="Jack of All Tradesの公式サイトです"
-      />
       <div className={style.hero}>
         <StaticImage
           src="../images/index-hero.jpg"

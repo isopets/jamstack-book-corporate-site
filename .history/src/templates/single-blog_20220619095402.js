@@ -7,10 +7,6 @@ import Seo from "../components/seo"
 const SingleBlog = props => {
   return (
     <Layout>
-      <Seo
-        title={props.data.contentfulBlog.title}
-        description={props.data.contentfulBlog.excerpt}
-      />
       <div className={style.hero}>
         <GatsbyImage
           image={
@@ -39,7 +35,6 @@ export const query = graphql`
   query ContentfulSingleBlogQuery($slug: String!) {
     contentfulBlog(slug: { eq: $slug }) {
       title
-      excerpt
       date(formatString: "YYYY-MM-DD")
       textBody {
         childMarkdownRemark {

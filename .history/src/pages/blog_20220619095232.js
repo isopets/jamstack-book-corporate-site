@@ -8,7 +8,6 @@ import Seo from "../components/seo"
 const Blog = props => {
   return (
     <Layout>
-      <Seo title="ブログ" description="これはブログページです" />
       <div className={style.wrapper}>
         <div className={style.container}>
           <h1> Blog </h1> <p> 弊社サービスやお客様の声などを紹介します。 </p>
