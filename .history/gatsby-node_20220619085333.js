@@ -17,12 +17,12 @@ exports.createPages = async({ graphql, actions }) => {
     }
   `)
 
-    result.data.allContentfulBlog.edges.forEach(({ node }) => {
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
-            path: node.slug,
+            path: node.fields.slug,
             component: path.resolve(`./src/templates/single-blog.js`),
             context: {
-                slug: node.slug,
+                slug: node.fields.slug,
             },
         })
     })

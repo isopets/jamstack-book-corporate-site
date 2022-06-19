@@ -33,7 +33,7 @@ export default SingleBlog
 
 export const query = graphql`
   query ContentfulSingleBlogQuery($slug: String!) {
-    contentfulBlog(slug: { eq: $slug }) {
+    contentfulBlog {
       title
       date(formatString: "YYYY-MM-DD")
       textBody {

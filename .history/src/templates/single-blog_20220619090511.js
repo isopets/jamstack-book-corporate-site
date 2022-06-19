@@ -10,7 +10,7 @@ const SingleBlog = props => {
       <div className={style.hero}>
         <GatsbyImage
           image={
-            props.data.markdownRemark.contentfulBlog.childImageSharp
+            props.data.markdownRemark.frontmatter.image.childImageSharp
               .gatsbyImageData
           }
           alt="blog-image"
@@ -18,8 +18,8 @@ const SingleBlog = props => {
       </div>
       <div className={style.wrapper}>
         <div className={style.container}>
-          <h1>{props.data.contentfulBlog.title}</h1>
-          <p>{props.data.contentfulBlog.date}</p>
+          <h1>{props.data.markdownRemark.frontmatter.title}</h1>
+          <p>{props.data.markdownRemark.frontmatter.date}</p>
           <div
             dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
           />
@@ -32,8 +32,8 @@ const SingleBlog = props => {
 export default SingleBlog
 
 export const query = graphql`
-  query ContentfulSingleBlogQuery($slug: String!) {
-    contentfulBlog(slug: { eq: $slug }) {
+  query ContentfulSingleBlogQuery {
+    contentfulBlog {
       title
       date(formatString: "YYYY-MM-DD")
       textBody {

@@ -32,8 +32,8 @@ const SingleBlog = props => {
 export default SingleBlog
 
 export const query = graphql`
-  query ContentfulSingleBlogQuery($slug: String!) {
-    contentfulBlog(slug: { eq: $slug }) {
+  query ContentfulSingleBlogQuery {
+    contentfulBlog {
       title
       date(formatString: "YYYY-MM-DD")
       textBody {
