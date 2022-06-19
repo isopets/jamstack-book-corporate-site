@@ -14,6 +14,7 @@ exports.createPages = async({ graphql, actions }) => {
             }
         }
       }
+    }
   `)
 
     result.data.allContentfulBlog.edges.forEach(({ node }) => {
